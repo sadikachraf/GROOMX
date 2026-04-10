@@ -20,7 +20,7 @@ fbq('track', 'ViewContent', {
   content_ids: ['AS91272'],
   content_type: 'product',
   currency: 'LYD',
-  value: 329
+  value: 299
 });
 </script>
 <noscript><img height="1" width="1" style="display:none"
@@ -881,6 +881,122 @@ src="https://www.facebook.com/tr?id=778731385018899&ev=PageView&noscript=1"/></n
   </div>
 </div>
 
+<!-- ORDER SECTION -->
+<section class="order-section" id="order">
+  <div style="text-align:center; margin-bottom: 24px;">
+    <div class="section-label" style="justify-content:center">اطلب الآن</div>
+    <h2 class="section-title">اختر عرضك واطلب هلأ</h2>
+    <p class="section-sub">الدفع عند الاستلام — توصيل لكل ليبيا</p>
+  </div>
+
+  <div class="order-card">
+    <!-- urgency -->
+    <div class="urgency-row">
+      <div class="urg-box">
+        <div class="urg-label">⏱ العرض ينتهي</div>
+        <div class="urg-value red" id="countdown">--:--:--</div>
+      </div>
+      <div class="urg-box">
+        <div class="urg-label">👁 يشاهد الآن</div>
+        <div class="urg-value green" id="viewers">--</div>
+      </div>
+    </div>
+
+    <!-- stock bar -->
+    <div class="stock-bar-wrap">
+      <div class="stock-bar-label">
+        المخزون المتبقي: <span id="stock-num">14 قطعة فقط!</span>
+      </div>
+      <div class="stock-bar-bg">
+        <div class="stock-bar-fill" id="stock-bar"></div>
+      </div>
+    </div>
+
+    <!-- form -->
+    <div id="form-wrap">
+      <div class="offers-label">اختر عرضك:</div>
+      <div class="offer-rows" id="offer-rows">
+
+        <div class="offer-row" data-qty="1" data-price="299" onclick="selectOffer(this)">
+          <div class="radio-dot"></div>
+          <div class="offer-row-info">
+            <div class="offer-row-title">قطعة واحدة</div>
+            <div class="offer-per">299 د.ل للقطعة</div>
+          </div>
+          <div class="offer-price">299 د.ل</div>
+        </div>
+
+        <div class="offer-row" data-qty="2" data-price="499" onclick="selectOffer(this)">
+          <div class="radio-dot"></div>
+          <div class="offer-row-info">
+            <div class="offer-row-title">
+              قطعتان
+              <span class="offer-badge badge-hot">🔥 الأكثر مبيعاً</span>
+            </div>
+            <div class="offer-per">249 د.ل للقطعة — وفّر 99 د.ل</div>
+          </div>
+          <div class="offer-price">499 د.ل</div>
+        </div>
+
+        <div class="offer-row" data-qty="3" data-price="649" onclick="selectOffer(this)">
+          <div class="radio-dot"></div>
+          <div class="offer-row-info">
+            <div class="offer-row-title">
+              ثلاث قطع
+              <span class="offer-badge badge-best">💎 الأفضل قيمة</span>
+            </div>
+            <div class="offer-per">216 د.ل للقطعة — وفّر 248 د.ل</div>
+          </div>
+          <div class="offer-price">649 د.ل</div>
+        </div>
+
+      </div>
+
+      <div class="form-fields">
+        <div class="field-group">
+          <label class="field-label">الاسم الكامل</label>
+          <input class="field-input" type="text" id="fname" placeholder="مثال: محمد علي" required>
+        </div>
+        <div class="field-group">
+          <label class="field-label">رقم الهاتف</label>
+          <input class="field-input" type="tel" id="fphone" placeholder="مثال: 0910000000" dir="ltr" required>
+        </div>
+        <div class="field-group">
+          <label class="field-label">العنوان الكامل</label>
+          <textarea class="field-input" id="faddress" placeholder="المدينة، الحي، الشارع..." rows="3" required></textarea>
+        </div>
+      </div>
+
+      <button class="submit-btn" id="submit-btn" onclick="submitOrder()">
+        ✅ تأكيد الطلب — الدفع عند الاستلام
+      </button>
+
+      <div class="form-trust">
+        <div class="ftrust-item">🔒 بياناتك آمنة</div>
+        <div class="ftrust-item">🚚 توصيل سريع</div>
+        <div class="ftrust-item">💳 الدفع عند الاستلام</div>
+      </div>
+    </div>
+
+    <!-- Thank you -->
+    <div class="thankyou-wrap" id="thankyou">
+      <div class="ty-icon">✅</div>
+      <div class="ty-title">تم استلام طلبك! 🎉</div>
+      <div class="ty-sub">
+        شكراً لثقتك بـ GROOMX<br>
+        سيتصل بك فريقنا قريباً لتأكيد الطلب وترتيب التوصيل.
+      </div>
+      <div class="ty-warning">
+        <div class="ty-warning-icon">⚠️</div>
+        <div class="ty-warning-text">
+          <strong>مهم جداً:</strong> سيتصل بك أحد ممثلينا على رقمك. إذا لم تجاوب على المكالمة، سيتم إلغاء طلبك تلقائياً. يرجى التأكد من أن هاتفك مفتوح.
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <!-- PROBLEM SECTION -->
 <section class="problem-section">
   <div class="section-label">المشكلة</div>
@@ -1131,122 +1247,6 @@ src="https://www.facebook.com/tr?id=778731385018899&ev=PageView&noscript=1"/></n
   </div>
 </section>
 
-<!-- ORDER SECTION -->
-<section class="order-section" id="order">
-  <div style="text-align:center; margin-bottom: 24px;">
-    <div class="section-label" style="justify-content:center">اطلب الآن</div>
-    <h2 class="section-title">اختر عرضك واطلب هلأ</h2>
-    <p class="section-sub">الدفع عند الاستلام — توصيل لكل ليبيا</p>
-  </div>
-
-  <div class="order-card">
-    <!-- urgency -->
-    <div class="urgency-row">
-      <div class="urg-box">
-        <div class="urg-label">⏱ العرض ينتهي</div>
-        <div class="urg-value red" id="countdown">--:--:--</div>
-      </div>
-      <div class="urg-box">
-        <div class="urg-label">👁 يشاهد الآن</div>
-        <div class="urg-value green" id="viewers">--</div>
-      </div>
-    </div>
-
-    <!-- stock bar -->
-    <div class="stock-bar-wrap">
-      <div class="stock-bar-label">
-        المخزون المتبقي: <span id="stock-num">14 قطعة فقط!</span>
-      </div>
-      <div class="stock-bar-bg">
-        <div class="stock-bar-fill" id="stock-bar"></div>
-      </div>
-    </div>
-
-    <!-- form -->
-    <div id="form-wrap">
-      <div class="offers-label">اختر عرضك:</div>
-      <div class="offer-rows" id="offer-rows">
-
-        <div class="offer-row" data-qty="1" data-price="329" onclick="selectOffer(this)">
-          <div class="radio-dot"></div>
-          <div class="offer-row-info">
-            <div class="offer-row-title">قطعة واحدة</div>
-            <div class="offer-per">329 د.ل للقطعة</div>
-          </div>
-          <div class="offer-price">329 د.ل</div>
-        </div>
-
-        <div class="offer-row" data-qty="2" data-price="549" onclick="selectOffer(this)">
-          <div class="radio-dot"></div>
-          <div class="offer-row-info">
-            <div class="offer-row-title">
-              قطعتان
-              <span class="offer-badge badge-hot">🔥 الأكثر مبيعاً</span>
-            </div>
-            <div class="offer-per">274.5 د.ل للقطعة — وفّر 109 د.ل</div>
-          </div>
-          <div class="offer-price">549 د.ل</div>
-        </div>
-
-        <div class="offer-row" data-qty="3" data-price="749" onclick="selectOffer(this)">
-          <div class="radio-dot"></div>
-          <div class="offer-row-info">
-            <div class="offer-row-title">
-              ثلاث قطع
-              <span class="offer-badge badge-best">💎 الأفضل قيمة</span>
-            </div>
-            <div class="offer-per">249.6 د.ل للقطعة — وفّر 238 د.ل</div>
-          </div>
-          <div class="offer-price">749 د.ل</div>
-        </div>
-
-      </div>
-
-      <div class="form-fields">
-        <div class="field-group">
-          <label class="field-label">الاسم الكامل</label>
-          <input class="field-input" type="text" id="fname" placeholder="مثال: محمد علي" required>
-        </div>
-        <div class="field-group">
-          <label class="field-label">رقم الهاتف</label>
-          <input class="field-input" type="tel" id="fphone" placeholder="مثال: 0910000000" dir="ltr" required>
-        </div>
-        <div class="field-group">
-          <label class="field-label">العنوان الكامل</label>
-          <textarea class="field-input" id="faddress" placeholder="المدينة، الحي، الشارع..." rows="3" required></textarea>
-        </div>
-      </div>
-
-      <button class="submit-btn" id="submit-btn" onclick="submitOrder()">
-        ✅ تأكيد الطلب — الدفع عند الاستلام
-      </button>
-
-      <div class="form-trust">
-        <div class="ftrust-item">🔒 بياناتك آمنة</div>
-        <div class="ftrust-item">🚚 توصيل سريع</div>
-        <div class="ftrust-item">💳 الدفع عند الاستلام</div>
-      </div>
-    </div>
-
-    <!-- Thank you -->
-    <div class="thankyou-wrap" id="thankyou">
-      <div class="ty-icon">✅</div>
-      <div class="ty-title">تم استلام طلبك! 🎉</div>
-      <div class="ty-sub">
-        شكراً لثقتك بـ GROOMX<br>
-        سيتصل بك فريقنا قريباً لتأكيد الطلب وترتيب التوصيل.
-      </div>
-      <div class="ty-warning">
-        <div class="ty-warning-icon">⚠️</div>
-        <div class="ty-warning-text">
-          <strong>مهم جداً:</strong> سيتصل بك أحد ممثلينا على رقمك. إذا لم تجاوب على المكالمة، سيتم إلغاء طلبك تلقائياً. يرجى التأكد من أن هاتفك مفتوح.
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
 <!-- PACKAGING SECTION -->
 <section style="padding: 0 20px 60px; background: var(--navy);">
   <div style="text-align:center; margin-bottom:20px;">
@@ -1270,7 +1270,7 @@ src="https://www.facebook.com/tr?id=778731385018899&ev=PageView&noscript=1"/></n
 <!-- STICKY CTA -->
 <div class="sticky-cta" id="sticky-cta">
   <div class="sticky-price">
-    329 د.ل
+    299 د.ل
     <small>ابدأ من</small>
   </div>
   <button class="sticky-btn" onclick="document.getElementById('order').scrollIntoView({behavior:'smooth'})">
