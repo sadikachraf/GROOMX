@@ -1388,40 +1388,53 @@ function submitOrder() {
   var dateStr = now.getFullYear() + '-' +
     String(now.getMonth()+1).padStart(2,'0') + '-' +
     String(now.getDate()).padStart(2,'0');
+  var orderId = 'ORD-' + Date.now();
+  var pageUrl = window.location.href;
 
   var payload = {
-    date: dateStr,
+    order_date: dateStr,
+    order_id: orderId,
+    country: 'Libya',
     name: name,
     phone: phone,
     address: address,
+    url: pageUrl,
+    sku: 'AS91272',
+    product: 'GROOMX Trimmer',
     quantity: qty,
-    price: price,
-    sku: 'AS91272'
+    total_price: price,
+    currency: 'LYD',
+    notes: ''
   };
 
+  // Show thank you immediately — no delay
+  document.getElementById('form-wrap').style.display = 'none';
+  var ty = document.getElementById('thankyou');
+  ty.style.display = 'block';
+  setTimeout(function() {
+    ty.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }, 100);
+
+  // Facebook Pixel — Purchase
+  if (typeof fbq === 'function') {
+    fbq('track', 'Purchase', {
+      content_ids: ['AS91272'],
+      content_type: 'product',
+      currency: 'LYD',
+      value: price,
+      num_items: qty
+    });
+  }
+
+  // Fire and forget to Google Sheets
   fetch('https://script.google.com/macros/s/AKfycbzFjsXhVjokYN5EYgBPzJk7ey1dMigbD_7R0kffijFEl4ldIZtX7MzPzOVTXOuxzDui/exec', {
     method: 'POST',
     mode: 'no-cors',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(payload)
-  }).finally(function() {
-    // Facebook Pixel — Purchase event
-    if (typeof fbq === 'function') {
-      fbq('track', 'Purchase', {
-        content_ids: ['AS91272'],
-        content_type: 'product',
-        currency: 'LYD',
-        value: price,
-        num_items: qty
-      });
-    }
-    document.getElementById('form-wrap').style.display = 'none';
-    var ty = document.getElementById('thankyou');
-    ty.style.display = 'block';
-    setTimeout(function() {
-      ty.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }, 100);
   });
+
+
 }
 </script>
 </body>
