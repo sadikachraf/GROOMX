@@ -1,0 +1,1398 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GROOMX | ماكينة الحلاقة الاحترافية</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #080f1e;
+    --navy2: #0d1a2e;
+    --cyan: #00d4ff;
+    --cyan2: #00a8cc;
+    --gold: #f0c040;
+    --white: #ffffff;
+    --grey: #8899aa;
+    --light: #f4f7fa;
+    --red: #ff3b3b;
+    --green: #00c875;
+    --card-bg: #ffffff;
+    --border: #e2e8f0;
+    --accent-pale: #e6fbff;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Tajawal', sans-serif;
+    background: var(--navy);
+    color: var(--white);
+    direction: rtl;
+    overflow-x: hidden;
+  }
+
+  /* ── TOPBAR ── */
+  .topbar {
+    background: var(--cyan);
+    color: var(--navy);
+    text-align: center;
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+  }
+  .topbar span { margin: 0 8px; }
+
+  /* ── HEADER ── */
+  header {
+    background: var(--navy);
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(0,212,255,0.15);
+  }
+  .logo {
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: -1px;
+    color: var(--white);
+  }
+  .logo span { color: var(--cyan); }
+  .logo-tag {
+    font-size: 10px;
+    color: var(--grey);
+    font-weight: 400;
+    display: block;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: -4px;
+  }
+  .header-badge {
+    background: rgba(0,212,255,0.1);
+    border: 1px solid var(--cyan);
+    color: var(--cyan);
+    font-size: 12px;
+    font-weight: 700;
+    padding: 6px 12px;
+    border-radius: 20px;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    background: linear-gradient(160deg, #080f1e 0%, #0a1628 50%, #061020 100%);
+    overflow: hidden;
+    padding: 40px 20px 0;
+    text-align: center;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; left: 50%;
+    transform: translateX(-50%);
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(0,212,255,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(0,212,255,0.1);
+    border: 1px solid rgba(0,212,255,0.3);
+    color: var(--cyan);
+    font-size: 13px;
+    font-weight: 700;
+    padding: 6px 16px;
+    border-radius: 30px;
+    margin-bottom: 18px;
+    animation: fadeDown 0.6s ease both;
+  }
+  .hero-eyebrow::before { content: '⚡'; }
+  .hero h1 {
+    font-size: clamp(28px, 8vw, 48px);
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 14px;
+    animation: fadeDown 0.7s ease both;
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: var(--cyan);
+    display: block;
+  }
+  .hero-sub {
+    font-size: 16px;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 28px;
+    line-height: 1.7;
+    animation: fadeDown 0.8s ease both;
+  }
+  .hero-badges {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 32px;
+    animation: fadeDown 0.9s ease both;
+  }
+  .hbadge {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    color: rgba(255,255,255,0.85);
+    font-size: 12px;
+    font-weight: 700;
+    padding: 7px 14px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .hbadge.cyan { border-color: var(--cyan); color: var(--cyan); background: rgba(0,212,255,0.08); }
+  .hero-img-wrap {
+    position: relative;
+    display: inline-block;
+    animation: floatUp 1s ease both;
+  }
+  .hero-img-wrap::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 10%; right: 10%;
+    height: 40px;
+    background: radial-gradient(ellipse, rgba(0,212,255,0.35) 0%, transparent 70%);
+    filter: blur(10px);
+  }
+  .hero-img {
+    width: 100%;
+    max-width: 340px;
+    display: block;
+    margin: 0 auto;
+    filter: drop-shadow(0 30px 60px rgba(0,212,255,0.2));
+    position: relative;
+    z-index: 1;
+  }
+  .hero-cta {
+    margin: -20px 20px 0;
+    position: relative;
+    z-index: 10;
+  }
+  .btn-primary {
+    display: block;
+    width: 100%;
+    background: linear-gradient(135deg, var(--cyan) 0%, var(--cyan2) 100%);
+    color: var(--navy);
+    font-family: 'Tajawal', sans-serif;
+    font-size: 18px;
+    font-weight: 900;
+    padding: 18px 24px;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(0,212,255,0.4);
+    transition: transform 0.2s, box-shadow 0.2s;
+    letter-spacing: 0.3px;
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(0,212,255,0.5); }
+  .btn-primary:active { transform: translateY(0); }
+
+  /* ── TRUST STRIP ── */
+  .trust-strip {
+    display: flex;
+    overflow-x: auto;
+    gap: 0;
+    padding: 0;
+    background: rgba(255,255,255,0.03);
+    border-top: 1px solid rgba(255,255,255,0.06);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    margin-top: 24px;
+    scrollbar-width: none;
+  }
+  .trust-strip::-webkit-scrollbar { display: none; }
+  .trust-item {
+    flex: 1;
+    min-width: 110px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 10px;
+    text-align: center;
+    border-left: 1px solid rgba(255,255,255,0.06);
+    gap: 5px;
+  }
+  .trust-item:last-child { border-left: none; }
+  .trust-icon { font-size: 22px; }
+  .trust-label { font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.8); line-height: 1.3; }
+
+  /* ── SECTION LABELS ── */
+  .section { padding: 60px 20px; }
+  .section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--cyan);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .section-label::before { content: ''; display: block; width: 24px; height: 2px; background: var(--cyan); }
+  .section-title {
+    font-size: clamp(24px, 6vw, 36px);
+    font-weight: 900;
+    line-height: 1.25;
+    margin-bottom: 10px;
+  }
+  .section-sub {
+    color: rgba(255,255,255,0.6);
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 36px;
+  }
+
+  /* ── PROBLEM SECTION ── */
+  .problem-section {
+    background: linear-gradient(180deg, var(--navy) 0%, #040c18 100%);
+    padding: 60px 20px;
+    text-align: center;
+  }
+  .problem-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 30px;
+  }
+  .problem-card {
+    background: rgba(255,59,59,0.08);
+    border: 1px solid rgba(255,59,59,0.2);
+    border-radius: 14px;
+    padding: 20px 14px;
+    text-align: center;
+  }
+  .problem-card .icon { font-size: 28px; margin-bottom: 8px; }
+  .problem-card p { font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.85); line-height: 1.4; }
+
+  /* ── FEATURE IMAGES ── */
+  .features-section {
+    padding: 60px 0;
+    background: #040c18;
+  }
+  .features-section h2 {
+    font-size: clamp(24px,6vw,36px);
+    font-weight: 900;
+    text-align: center;
+    padding: 0 20px;
+    margin-bottom: 8px;
+  }
+  .features-section .sub {
+    text-align: center;
+    color: rgba(255,255,255,0.5);
+    font-size: 14px;
+    padding: 0 20px;
+    margin-bottom: 30px;
+  }
+  .feat-img-row {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+  .feat-img-item {
+    position: relative;
+    overflow: hidden;
+  }
+  .feat-img-item img {
+    width: 100%;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+  .feat-img-item:hover img { transform: scale(1.02); }
+  .feat-img-caption {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    background: linear-gradient(0deg, rgba(8,15,30,0.9) 0%, transparent 100%);
+    padding: 30px 20px 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .feat-cap-icon {
+    width: 36px; height: 36px;
+    background: var(--cyan);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+  .feat-cap-text { font-size: 13px; font-weight: 700; line-height: 1.4; }
+  .feat-cap-text strong { color: var(--cyan); display: block; font-size: 15px; }
+
+  /* ── BENEFITS ICONS ── */
+  .benefits-section {
+    padding: 60px 20px;
+    background: var(--navy2);
+  }
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-top: 30px;
+  }
+  .benefit-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 20px 16px;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .benefit-card:hover {
+    border-color: rgba(0,212,255,0.3);
+    background: rgba(0,212,255,0.05);
+  }
+  .benefit-icon { font-size: 30px; margin-bottom: 10px; }
+  .benefit-title { font-size: 14px; font-weight: 800; margin-bottom: 4px; }
+  .benefit-desc { font-size: 12px; color: rgba(255,255,255,0.55); line-height: 1.5; }
+
+  /* ── BEFORE AFTER ── */
+  .ba-section {
+    padding: 60px 20px;
+    background: #040c18;
+    text-align: center;
+  }
+  .ba-img {
+    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    margin: 24px 0;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  }
+  .ba-img img { width: 100%; display: block; }
+  .ba-labels {
+    display: flex;
+    justify-content: space-around;
+    margin-top: -12px;
+    position: relative;
+    z-index: 2;
+  }
+  .ba-label {
+    font-size: 13px;
+    font-weight: 800;
+    padding: 6px 18px;
+    border-radius: 20px;
+  }
+  .ba-label.before { background: rgba(255,59,59,0.2); color: #ff8080; border: 1px solid rgba(255,59,59,0.3); }
+  .ba-label.after { background: rgba(0,200,117,0.2); color: #00c875; border: 1px solid rgba(0,200,117,0.3); }
+
+  /* ── HOW IT WORKS ── */
+  .hiw-section {
+    padding: 60px 20px;
+    background: var(--navy);
+  }
+  .hiw-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 30px;
+    position: relative;
+  }
+  .hiw-steps::before {
+    content: '';
+    position: absolute;
+    right: 23px; top: 0; bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, var(--cyan) 0%, transparent 100%);
+    opacity: 0.3;
+  }
+  .hiw-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    flex-direction: row-reverse;
+  }
+  .step-num {
+    width: 48px; height: 48px;
+    background: linear-gradient(135deg, var(--cyan), var(--cyan2));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 900;
+    color: var(--navy);
+    flex-shrink: 0;
+    box-shadow: 0 4px 20px rgba(0,212,255,0.3);
+  }
+  .step-content { flex: 1; padding-top: 10px; }
+  .step-title { font-size: 16px; font-weight: 800; margin-bottom: 4px; }
+  .step-desc { font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.6; }
+
+  /* ── REVIEWS ── */
+  .reviews-section {
+    padding: 60px 20px;
+    background: #040c18;
+  }
+  .stars { color: #f0c040; font-size: 16px; margin-bottom: 6px; }
+  .reviews-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 30px;
+  }
+  .review-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 20px;
+  }
+  .review-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+  }
+  .reviewer-avatar {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--cyan), #0050aa);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 900;
+    color: white;
+    flex-shrink: 0;
+  }
+  .reviewer-info { flex: 1; }
+  .reviewer-name { font-size: 15px; font-weight: 800; }
+  .reviewer-city { font-size: 12px; color: var(--grey); }
+  .review-text { font-size: 14px; color: rgba(255,255,255,0.8); line-height: 1.7; }
+  .review-verified {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--green);
+    font-size: 11px;
+    font-weight: 700;
+    margin-top: 10px;
+  }
+
+  /* ── ORDER SECTION ── */
+  .order-section {
+    padding: 60px 20px 80px;
+    background: linear-gradient(180deg, #040c18 0%, var(--navy) 100%);
+  }
+  .order-card {
+    background: var(--white);
+    border-radius: 24px;
+    padding: 28px 20px;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(0,212,255,0.1);
+    position: relative;
+    overflow: hidden;
+  }
+  .order-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--cyan), var(--cyan2));
+  }
+  .order-title {
+    font-size: 20px;
+    font-weight: 900;
+    color: var(--navy);
+    text-align: center;
+    margin-bottom: 6px;
+  }
+  .order-sub {
+    font-size: 13px;
+    color: #6b7a8d;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  /* urgency bar */
+  .urgency-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+  }
+  .urg-box {
+    flex: 1;
+    min-width: 90px;
+    background: #f8f9fc;
+    border: 1px solid #e8ecf2;
+    border-radius: 10px;
+    padding: 10px 8px;
+    text-align: center;
+  }
+  .urg-label { font-size: 10px; color: #8899aa; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+  .urg-value { font-size: 16px; font-weight: 900; color: var(--navy); margin-top: 2px; }
+  .urg-value.red { color: var(--red); }
+  .urg-value.green { color: var(--green); }
+
+  /* stock bar */
+  .stock-bar-wrap { margin-bottom: 20px; }
+  .stock-bar-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 6px;
+  }
+  .stock-bar-label span { color: var(--red); }
+  .stock-bar-bg {
+    background: #f0f0f0;
+    border-radius: 8px;
+    height: 8px;
+    overflow: hidden;
+  }
+  .stock-bar-fill {
+    height: 100%;
+    width: 28%;
+    background: linear-gradient(90deg, var(--red), #ff6b6b);
+    border-radius: 8px;
+    transition: width 1s ease;
+  }
+
+  /* offer rows */
+  .offers-label {
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 10px;
+  }
+  .offer-rows { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+  .offer-row {
+    border: 2px solid #dde3ed;
+    border-radius: 14px;
+    padding: 14px 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.2s;
+    background: #ffffff;
+    flex-direction: row-reverse;
+    position: relative;
+  }
+  .offer-row .radio-dot {
+    width: 20px; height: 20px;
+    border-radius: 50%;
+    border: 2px solid #dde3ed;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+  }
+  .offer-row .radio-dot::after {
+    content: '';
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--cyan);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .offer-row-info { flex: 1; }
+  .offer-row-title {
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--navy);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .offer-badge {
+    font-size: 10px;
+    font-weight: 800;
+    padding: 3px 8px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .badge-hot { background: #fff0f0; color: #ff3b3b; border: 1px solid #ffcece; }
+  .badge-best { background: #e8fff5; color: #00a85e; border: 1px solid #b3f0d4; }
+  .offer-price {
+    font-size: 18px;
+    font-weight: 900;
+    color: var(--navy);
+    white-space: nowrap;
+  }
+  .offer-per { font-size: 11px; color: #8899aa; font-weight: 600; margin-top: 2px; }
+
+  /* form fields */
+  .form-fields { display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px; }
+  .field-group { display: flex; flex-direction: column; gap: 6px; }
+  .field-label { font-size: 13px; font-weight: 700; color: #3a4a5c; }
+  .field-input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid #e0e6f0;
+    border-radius: 12px;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 15px;
+    color: var(--navy);
+    background: #fafbfd;
+    outline: none;
+    transition: border-color 0.2s;
+    direction: rtl;
+  }
+  .field-input:focus { border-color: var(--cyan); background: #fff; }
+  .field-input::placeholder { color: #aab4c4; }
+
+  /* submit btn */
+  .submit-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #00d4ff, #0099cc);
+    color: var(--navy);
+    font-family: 'Tajawal', sans-serif;
+    font-size: 18px;
+    font-weight: 900;
+    padding: 18px;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba(0,212,255,0.35);
+    transition: transform 0.2s, box-shadow 0.2s;
+    letter-spacing: 0.3px;
+    margin-bottom: 14px;
+  }
+  .submit-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 35px rgba(0,212,255,0.45); }
+  .submit-btn:active { transform: translateY(0); }
+  .submit-btn:disabled { opacity: 0.7; cursor: not-allowed; }
+
+  .form-trust {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .ftrust-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    color: #7a8a9a;
+    font-weight: 600;
+  }
+
+  /* ── THANK YOU ── */
+  .thankyou-wrap {
+    display: none;
+    text-align: center;
+    padding: 20px 0;
+  }
+  .ty-icon {
+    width: 80px; height: 80px;
+    background: linear-gradient(135deg, var(--green), #00a870);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    margin: 0 auto 20px;
+    box-shadow: 0 8px 30px rgba(0,200,117,0.3);
+  }
+  .ty-title { font-size: 24px; font-weight: 900; color: var(--navy); margin-bottom: 8px; }
+  .ty-sub { font-size: 14px; color: #6b7a8d; line-height: 1.7; margin-bottom: 20px; }
+  .ty-warning {
+    background: #fff8e1;
+    border: 2px solid #f0c040;
+    border-radius: 14px;
+    padding: 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    text-align: right;
+  }
+  .ty-warning-icon { font-size: 22px; flex-shrink: 0; }
+  .ty-warning-text { font-size: 13px; font-weight: 700; color: #7a5c00; line-height: 1.6; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #020810;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    padding: 30px 20px;
+    text-align: center;
+  }
+  .footer-logo { font-size: 22px; font-weight: 900; color: var(--white); margin-bottom: 8px; }
+  .footer-logo span { color: var(--cyan); }
+  .footer-text { font-size: 12px; color: rgba(255,255,255,0.3); line-height: 1.6; }
+
+  /* ── STICKY CTA ── */
+  .sticky-cta {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background: var(--navy);
+    border-top: 1px solid rgba(0,212,255,0.2);
+    padding: 12px 20px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+  }
+  .sticky-cta.show { transform: translateY(0); }
+  .sticky-price {
+    font-size: 18px;
+    font-weight: 900;
+    color: var(--cyan);
+    white-space: nowrap;
+  }
+  .sticky-price small { font-size: 11px; color: var(--grey); display: block; font-weight: 400; }
+  .sticky-btn {
+    flex: 1;
+    background: linear-gradient(135deg, var(--cyan), var(--cyan2));
+    color: var(--navy);
+    font-family: 'Tajawal', sans-serif;
+    font-size: 15px;
+    font-weight: 900;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(0,212,255,0.3);
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes floatUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+  }
+  .pulse { animation: pulse 2.5s ease infinite; }
+
+  /* lazy load */
+  img[data-src] { opacity: 0; transition: opacity 0.4s; }
+  img.loaded { opacity: 1; }
+
+  @media (min-width: 480px) {
+    .problem-grid { grid-template-columns: repeat(2, 1fr); }
+    .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <span>🚚 توصيل لجميع مدن ليبيا</span>
+  <span>|</span>
+  <span>💳 الدفع عند الاستلام</span>
+  <span>|</span>
+  <span>✅ ضمان الجودة</span>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div>
+    <div class="logo">GROOM<span>X</span></div>
+    <span class="logo-tag">Premium Grooming</span>
+  </div>
+  <div class="header-badge">IPX7 ضد الماء</div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">الماكينة الأكثر مبيعاً في ليبيا</div>
+  <h1>احلق بثقة.<em>في أي مكان.</em></h1>
+  <p class="hero-sub">
+    ماكينة الحلاقة الاحترافية الوحيدة التي تعمل داخل الدوش —
+    بلا ضوضاء، بلا حبوب، بلا إحراج.
+  </p>
+  <div class="hero-badges">
+    <div class="hbadge cyan">💧 IPX7 ضد الماء</div>
+    <div class="hbadge">🔇 أقل من 50dB</div>
+    <div class="hbadge">⚡ شحن USB</div>
+    <div class="hbadge">💡 ضوء LED</div>
+  </div>
+  <div class="hero-img-wrap">
+    <img class="hero-img" src="images/5.webp" alt="GROOMX Trimmer" loading="eager">
+  </div>
+</section>
+
+<!-- HERO CTA -->
+<div class="hero-cta">
+  <a href="#order" class="btn-primary pulse">
+    🛒 اطلب الآن — الدفع عند الاستلام
+  </a>
+</div>
+
+<!-- TRUST STRIP -->
+<div class="trust-strip">
+  <div class="trust-item">
+    <div class="trust-icon">🚚</div>
+    <div class="trust-label">توصيل<br>سريع</div>
+  </div>
+  <div class="trust-item">
+    <div class="trust-icon">💳</div>
+    <div class="trust-label">الدفع عند<br>الاستلام</div>
+  </div>
+  <div class="trust-item">
+    <div class="trust-icon">🛡️</div>
+    <div class="trust-label">ضمان<br>الجودة</div>
+  </div>
+  <div class="trust-item">
+    <div class="trust-icon">📦</div>
+    <div class="trust-label">تغليف<br>محكم</div>
+  </div>
+  <div class="trust-item">
+    <div class="trust-icon">⭐</div>
+    <div class="trust-label">آلاف<br>الراضين</div>
+  </div>
+</div>
+
+<!-- PROBLEM SECTION -->
+<section class="problem-section">
+  <div class="section-label">المشكلة</div>
+  <h2 class="section-title">هل تعاني من هذا؟</h2>
+  <p class="section-sub">معظم الرجال يعانون من نفس المشاكل مع ماكينات الحلاقة العادية</p>
+  <div class="problem-grid">
+    <div class="problem-card">
+      <div class="icon">😣</div>
+      <p>حبوب وتهيج بعد الحلاقة</p>
+    </div>
+    <div class="problem-card">
+      <div class="icon">🔊</div>
+      <p>ضوضاء عالية تزعج الجميع</p>
+    </div>
+    <div class="problem-card">
+      <div class="icon">💸</div>
+      <p>شفرات تتلف بسرعة وتكلف كثيراً</p>
+    </div>
+    <div class="problem-card">
+      <div class="icon">💧</div>
+      <p>لا تعمل قرب الماء أو في الدوش</p>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURE IMAGES -->
+<section class="features-section">
+  <div class="section-label" style="padding-right:20px">المميزات</div>
+  <h2>تقنية لم تجربها من قبل</h2>
+  <p class="sub">كل تفصيل صُمم لراحتك وثقتك</p>
+  <div class="feat-img-row">
+
+    <div class="feat-img-item">
+      <img src="images/2.webp" alt="IPX7 ضد الماء" loading="lazy">
+      <div class="feat-img-caption">
+        <div class="feat-cap-icon">💧</div>
+        <div class="feat-cap-text">
+          <strong>IPX7 ضد الماء بالكامل</strong>
+          احلق في الدوش أو بجانب البرزة — بدون أي خوف
+        </div>
+      </div>
+    </div>
+
+    <div class="feat-img-item">
+      <img src="images/8.webp" alt="تحت الماء" loading="lazy">
+      <div class="feat-img-caption">
+        <div class="feat-cap-icon">🚿</div>
+        <div class="feat-cap-text">
+          <strong>يعمل تحت الماء مباشرة</strong>
+          اغسله بالكامل بعد الاستخدام — نظيف دائماً
+        </div>
+      </div>
+    </div>
+
+    <div class="feat-img-item">
+      <img src="images/1.webp" alt="ضوء LED" loading="lazy">
+      <div class="feat-img-caption">
+        <div class="feat-cap-icon">💡</div>
+        <div class="feat-cap-text">
+          <strong>ضوء LED مدمج</strong>
+          رؤية مثالية في كل زاوية — دقة لا تخطئ
+        </div>
+      </div>
+    </div>
+
+    <div class="feat-img-item">
+      <img src="images/4.webp" alt="شفرة سلسة" loading="lazy">
+      <div class="feat-img-caption">
+        <div class="feat-cap-icon">✨</div>
+        <div class="feat-cap-text">
+          <strong>شفرة ناعمة كالحرير</strong>
+          لا حبوب، لا وجيج — نتيجة احترافية في البيت
+        </div>
+      </div>
+    </div>
+
+    <div class="feat-img-item">
+      <img src="images/3.webp" alt="هادئة" loading="lazy">
+      <div class="feat-img-caption">
+        <div class="feat-cap-icon">🔇</div>
+        <div class="feat-cap-text">
+          <strong>أقل من 50 ديسيبل</strong>
+          احلق في أي وقت — من غير ما تزعج حد
+        </div>
+      </div>
+    </div>
+
+    <div class="feat-img-item">
+      <img src="images/7.webp" alt="للاحة والجسم" loading="lazy">
+      <div class="feat-img-caption">
+        <div class="feat-cap-icon">🎯</div>
+        <div class="feat-cap-text">
+          <strong>للوجه والجسم معاً</strong>
+          ماكينة وحدة تكفيك لكل شيء
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- BENEFITS GRID -->
+<section class="benefits-section">
+  <div class="section-label">لماذا GROOMX</div>
+  <h2 class="section-title">8 أسباب تخليك تطلب هلأ</h2>
+  <div class="benefits-grid">
+    <div class="benefit-card">
+      <div class="benefit-icon">💧</div>
+      <div class="benefit-title">IPX7 ضد الماء</div>
+      <div class="benefit-desc">يعمل تحت الماء بالكامل بدون أي ضرر</div>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">🔇</div>
+      <div class="benefit-title">هادئة جداً</div>
+      <div class="benefit-desc">أقل من 50 ديسيبل — لا تزعج أحد</div>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">💡</div>
+      <div class="benefit-title">ضوء LED</div>
+      <div class="benefit-desc">رؤية واضحة في كل الأماكن</div>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">✨</div>
+      <div class="benefit-title">لا حبوب</div>
+      <div class="benefit-desc">شفرة ناعمة — بشرة ناعمة دائماً</div>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">⚡</div>
+      <div class="benefit-title">شحن USB</div>
+      <div class="benefit-desc">اشحنها من أي مكان — لا كابلات معقدة</div>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">🔋</div>
+      <div class="benefit-title">بطارية 90 دقيقة</div>
+      <div class="benefit-desc">600mAh — تكفيك أسابيع من الاستخدام</div>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">🎯</div>
+      <div class="benefit-title">للوجه والجسم</div>
+      <div class="benefit-desc">ماكينة واحدة لكل احتياجاتك</div>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">🏆</div>
+      <div class="benefit-title">جودة احترافية</div>
+      <div class="benefit-desc">Kemei KM-1838 — موثوق عالمياً</div>
+    </div>
+  </div>
+</section>
+
+<!-- BEFORE / AFTER -->
+<section class="ba-section">
+  <div class="section-label">النتيجة</div>
+  <h2 class="section-title">قبل وبعد — الفرق واضح</h2>
+  <p class="section-sub">نتيجة احترافية في البيت — بدون صالون وبدون تكلفة إضافية</p>
+  <div class="ba-img">
+    <img src="images/6.webp" alt="قبل وبعد" loading="lazy">
+  </div>
+  <div class="ba-labels">
+    <div class="ba-label before">❌ قبل</div>
+    <div class="ba-label after">✅ بعد GROOMX</div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="hiw-section">
+  <div class="section-label">كيف تستخدمها</div>
+  <h2 class="section-title">3 خطوات بس</h2>
+  <p class="section-sub">أسهل ماكينة حلاقة استخدمتها في حياتك</p>
+  <div class="hiw-steps">
+    <div class="hiw-step">
+      <div class="step-num">١</div>
+      <div class="step-content">
+        <div class="step-title">اشحنها وشغّلها</div>
+        <div class="step-desc">شحن USB سريع — تنورة الليلة وتكفيك أسابيع</div>
+      </div>
+    </div>
+    <div class="hiw-step">
+      <div class="step-num">٢</div>
+      <div class="step-content">
+        <div class="step-title">احلق أين ما تشاء</div>
+        <div class="step-desc">في الدوش، في الحمام، قبل النوم — بلا قيود</div>
+      </div>
+    </div>
+    <div class="hiw-step">
+      <div class="step-num">٣</div>
+      <div class="step-content">
+        <div class="step-title">اغسلها تحت الماء</div>
+        <div class="step-desc">IPX7 — نظفها بالكامل تحت الصنبور وخزنها</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews-section">
+  <div class="section-label">آراء الزبائن</div>
+  <h2 class="section-title">الناس راضية 100%</h2>
+  <div class="reviews-list">
+
+    <div class="review-card">
+      <div class="review-header">
+        <div class="reviewer-avatar">خ</div>
+        <div class="reviewer-info">
+          <div class="reviewer-name">خالد المنصوري</div>
+          <div class="reviewer-city">🇱🇾 طرابلس</div>
+        </div>
+        <div class="stars" style="margin:0;margin-right:auto">★★★★★</div>
+      </div>
+      <div class="stars">★★★★★</div>
+      <div class="review-text">
+        والله ماكينة ممتازة، جربت كتير من الماكينات قبل بس هذي الأحسن. تشتغل في الدوش وهادية وما تخلي حبوب. اشتريت واحدة لأخوي كمان.
+      </div>
+      <div class="review-verified">✅ مشتري موثق</div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-header">
+        <div class="reviewer-avatar">ع</div>
+        <div class="reviewer-info">
+          <div class="reviewer-name">عمر الزروق</div>
+          <div class="reviewer-city">🇱🇾 بنغازي</div>
+        </div>
+        <div class="stars" style="margin:0;margin-right:auto">★★★★★</div>
+      </div>
+      <div class="stars">★★★★★</div>
+      <div class="review-text">
+        الضوء اللي تحت الشفرة فكرة ذكية جداً — تشوف كل شعرة صغيرة. التوصيل جاء سريع والتغليف كان محترم. راضي جداً وما راح آخذ غيرها.
+      </div>
+      <div class="review-verified">✅ مشتري موثق</div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-header">
+        <div class="reviewer-avatar">م</div>
+        <div class="reviewer-info">
+          <div class="reviewer-name">محمد البشير</div>
+          <div class="reviewer-city">🇱🇾 مصراتة</div>
+        </div>
+        <div class="stars" style="margin:0;margin-right:auto">★★★★★</div>
+      </div>
+      <div class="stars">★★★★★</div>
+      <div class="review-text">
+        اشتريت 3 — وحدة لي ووحدتين هدايا. كل من أعطيتها إياه اتصل يشكرني. جودة عالية، ماكينة بتكسب صح.
+      </div>
+      <div class="review-verified">✅ مشتري موثق</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ORDER SECTION -->
+<section class="order-section" id="order">
+  <div style="text-align:center; margin-bottom: 24px;">
+    <div class="section-label" style="justify-content:center">اطلب الآن</div>
+    <h2 class="section-title">اختر عرضك واطلب هلأ</h2>
+    <p class="section-sub">الدفع عند الاستلام — توصيل لكل ليبيا</p>
+  </div>
+
+  <div class="order-card">
+    <!-- urgency -->
+    <div class="urgency-row">
+      <div class="urg-box">
+        <div class="urg-label">⏱ العرض ينتهي</div>
+        <div class="urg-value red" id="countdown">--:--:--</div>
+      </div>
+      <div class="urg-box">
+        <div class="urg-label">👁 يشاهد الآن</div>
+        <div class="urg-value green" id="viewers">--</div>
+      </div>
+    </div>
+
+    <!-- stock bar -->
+    <div class="stock-bar-wrap">
+      <div class="stock-bar-label">
+        المخزون المتبقي: <span id="stock-num">14 قطعة فقط!</span>
+      </div>
+      <div class="stock-bar-bg">
+        <div class="stock-bar-fill" id="stock-bar"></div>
+      </div>
+    </div>
+
+    <!-- form -->
+    <div id="form-wrap">
+      <div class="offers-label">اختر عرضك:</div>
+      <div class="offer-rows" id="offer-rows">
+
+        <div class="offer-row" data-qty="1" data-price="329" onclick="selectOffer(this)">
+          <div class="radio-dot"></div>
+          <div class="offer-row-info">
+            <div class="offer-row-title">قطعة واحدة</div>
+            <div class="offer-per">329 د.ل للقطعة</div>
+          </div>
+          <div class="offer-price">329 د.ل</div>
+        </div>
+
+        <div class="offer-row" data-qty="2" data-price="549" onclick="selectOffer(this)">
+          <div class="radio-dot"></div>
+          <div class="offer-row-info">
+            <div class="offer-row-title">
+              قطعتان
+              <span class="offer-badge badge-hot">🔥 الأكثر مبيعاً</span>
+            </div>
+            <div class="offer-per">274.5 د.ل للقطعة — وفّر 109 د.ل</div>
+          </div>
+          <div class="offer-price">549 د.ل</div>
+        </div>
+
+        <div class="offer-row" data-qty="3" data-price="749" onclick="selectOffer(this)">
+          <div class="radio-dot"></div>
+          <div class="offer-row-info">
+            <div class="offer-row-title">
+              ثلاث قطع
+              <span class="offer-badge badge-best">💎 الأفضل قيمة</span>
+            </div>
+            <div class="offer-per">249.6 د.ل للقطعة — وفّر 238 د.ل</div>
+          </div>
+          <div class="offer-price">749 د.ل</div>
+        </div>
+
+      </div>
+
+      <div class="form-fields">
+        <div class="field-group">
+          <label class="field-label">الاسم الكامل</label>
+          <input class="field-input" type="text" id="fname" placeholder="مثال: محمد علي" required>
+        </div>
+        <div class="field-group">
+          <label class="field-label">رقم الهاتف</label>
+          <input class="field-input" type="tel" id="fphone" placeholder="مثال: 0910000000" dir="ltr" required>
+        </div>
+        <div class="field-group">
+          <label class="field-label">العنوان الكامل</label>
+          <textarea class="field-input" id="faddress" placeholder="المدينة، الحي، الشارع..." rows="3" required></textarea>
+        </div>
+      </div>
+
+      <button class="submit-btn" id="submit-btn" onclick="submitOrder()">
+        ✅ تأكيد الطلب — الدفع عند الاستلام
+      </button>
+
+      <div class="form-trust">
+        <div class="ftrust-item">🔒 بياناتك آمنة</div>
+        <div class="ftrust-item">🚚 توصيل سريع</div>
+        <div class="ftrust-item">💳 الدفع عند الاستلام</div>
+      </div>
+    </div>
+
+    <!-- Thank you -->
+    <div class="thankyou-wrap" id="thankyou">
+      <div class="ty-icon">✅</div>
+      <div class="ty-title">تم استلام طلبك! 🎉</div>
+      <div class="ty-sub">
+        شكراً لثقتك بـ GROOMX<br>
+        سيتصل بك فريقنا قريباً لتأكيد الطلب وترتيب التوصيل.
+      </div>
+      <div class="ty-warning">
+        <div class="ty-warning-icon">⚠️</div>
+        <div class="ty-warning-text">
+          <strong>مهم جداً:</strong> سيتصل بك أحد ممثلينا على رقمك. إذا لم تجاوب على المكالمة، سيتم إلغاء طلبك تلقائياً. يرجى التأكد من أن هاتفك مفتوح.
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PACKAGING SECTION -->
+<section style="padding: 0 20px 60px; background: var(--navy);">
+  <div style="text-align:center; margin-bottom:20px;">
+    <div class="section-label" style="justify-content:center">التغليف</div>
+    <h2 class="section-title">تغليف احترافي — جاهز للهدية</h2>
+  </div>
+  <div style="border-radius:16px; overflow:hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.4);">
+    <img src="images/9.webp" alt="تغليف GROOMX" style="width:100%; display:block;" loading="lazy">
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">GROOM<span>X</span></div>
+  <div class="footer-text">
+    © 2025 GROOMX — جميع الحقوق محفوظة<br>
+    توصيل لجميع مدن ليبيا | الدفع عند الاستلام
+  </div>
+</footer>
+
+<!-- STICKY CTA -->
+<div class="sticky-cta" id="sticky-cta">
+  <div class="sticky-price">
+    329 د.ل
+    <small>ابدأ من</small>
+  </div>
+  <button class="sticky-btn" onclick="document.getElementById('order').scrollIntoView({behavior:'smooth'})">
+    🛒 اطلب الآن
+  </button>
+</div>
+
+<script>
+// ── OFFER SELECTION ──
+function selectOffer(el) {
+  document.querySelectorAll('.offer-row').forEach(r => {
+    r.style.borderColor = '#dde3ed';
+    r.style.background = '#ffffff';
+    r.querySelector('.radio-dot').style.borderColor = '#dde3ed';
+    r.querySelector('.radio-dot').style.background = '#ffffff';
+    r.querySelector('.radio-dot::after') && (r.querySelector('.radio-dot').style.setProperty('--dot-op','0'));
+    var dot = r.querySelector('.radio-dot');
+    dot.style.borderColor = '#dde3ed';
+    dot.innerHTML = '';
+  });
+  el.style.borderColor = '#00d4ff';
+  el.style.background = '#e6fbff';
+  var dot = el.querySelector('.radio-dot');
+  dot.style.borderColor = '#00d4ff';
+  dot.style.background = '#00d4ff';
+  dot.innerHTML = '<span style="width:8px;height:8px;background:#080f1e;border-radius:50%;display:block;"></span>';
+}
+
+// Pre-select offer 2 on load
+window.addEventListener('load', function() {
+  var rows = document.querySelectorAll('.offer-row');
+  if (rows[1]) selectOffer(rows[1]);
+});
+
+// ── COUNTDOWN TIMER ──
+function updateCountdown() {
+  var now = new Date();
+  var end = new Date(now);
+  end.setHours(23, 59, 59, 0);
+  var diff = end - now;
+  var h = Math.floor(diff / 3600000);
+  var m = Math.floor((diff % 3600000) / 60000);
+  var s = Math.floor((diff % 60000) / 1000);
+  document.getElementById('countdown').textContent =
+    String(h).padStart(2,'0') + ':' + String(m).padStart(2,'0') + ':' + String(s).padStart(2,'0');
+}
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+// ── LIVE VIEWERS ──
+var baseViewers = 23;
+function updateViewers() {
+  var delta = Math.floor(Math.random() * 5) - 2;
+  baseViewers = Math.max(15, Math.min(40, baseViewers + delta));
+  document.getElementById('viewers').textContent = baseViewers + ' شخص';
+}
+updateViewers();
+setInterval(updateViewers, 4000);
+
+// ── STOCK BAR ──
+var stockLeft = 14;
+document.getElementById('stock-num').textContent = stockLeft + ' قطعة فقط!';
+setTimeout(function() {
+  var pct = Math.round((stockLeft / 50) * 100);
+  document.getElementById('stock-bar').style.width = pct + '%';
+}, 300);
+
+// ── STICKY CTA ──
+window.addEventListener('scroll', function() {
+  var sticky = document.getElementById('sticky-cta');
+  if (window.scrollY > 400) sticky.classList.add('show');
+  else sticky.classList.remove('show');
+});
+
+// ── LAZY LOAD ──
+if ('IntersectionObserver' in window) {
+  var imgObs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) {
+        var img = e.target;
+        if (img.dataset.src) {
+          img.src = img.dataset.src;
+          img.addEventListener('load', function() { img.classList.add('loaded'); });
+          imgObs.unobserve(img);
+        }
+      }
+    });
+  });
+  document.querySelectorAll('img[data-src]').forEach(function(img) { imgObs.observe(img); });
+}
+
+// ── SUBMIT ORDER ──
+function submitOrder() {
+  var name = document.getElementById('fname').value.trim();
+  var phone = document.getElementById('fphone').value.trim();
+  var address = document.getElementById('faddress').value.trim();
+
+  if (!name) { alert('يرجى إدخال الاسم الكامل'); return; }
+  if (!phone) { alert('يرجى إدخال رقم الهاتف'); return; }
+  if (!address) { alert('يرجى إدخال العنوان'); return; }
+
+  var selectedRow = document.querySelector('.offer-row[style*="e6fbff"]');
+  if (!selectedRow) {
+    var rows = document.querySelectorAll('.offer-row');
+    selectedRow = rows[1];
+  }
+  var qty = parseInt(selectedRow.getAttribute('data-qty'));
+  var price = parseInt(selectedRow.getAttribute('data-price'));
+
+  var btn = document.getElementById('submit-btn');
+  btn.disabled = true;
+  btn.textContent = '⏳ جاري إرسال الطلب...';
+
+  var now = new Date();
+  var dateStr = now.getFullYear() + '-' +
+    String(now.getMonth()+1).padStart(2,'0') + '-' +
+    String(now.getDate()).padStart(2,'0');
+
+  var payload = {
+    date: dateStr,
+    name: name,
+    phone: phone,
+    address: address,
+    quantity: qty,
+    price: price,
+    sku: 'AS91272'
+  };
+
+  fetch('https://script.google.com/macros/s/AKfycbzFjsXhVjokYN5EYgBPzJk7ey1dMigbD_7R0kffijFEl4ldIZtX7MzPzOVTXOuxzDui/exec', {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
+  }).finally(function() {
+    document.getElementById('form-wrap').style.display = 'none';
+    var ty = document.getElementById('thankyou');
+    ty.style.display = 'block';
+    setTimeout(function() {
+      ty.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 100);
+  });
+}
+</script>
+</body>
+</html>
